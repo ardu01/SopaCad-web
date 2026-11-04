@@ -1,0 +1,40 @@
+name: Activar GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+
+jobs:
+  enable:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publicar desde main /
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          repo="${{ github.repository }}"
+
+          if gh api "repos/${repo}/pages" > /tmp/pages.json; then
+            echo "Pages ya estaba activo"
+            cat /tmp/pages.json
+          else
+            echo "Creando el sitio Pages (legacy, main, /)"
+            gh api --method POST "repos/${repo}/pages" \
+              -f build_type=legacy \
+              -f source[branch]=main \
+              -f source[path]=/
+          fi
+
+          echo "Solicitando build"
+          gh api --method POST "repos/${repo}/pages/builds" || true
+
+          echo "Description y homepage"
+          gh api --method PATCH "repos/${repo}" \
+            -f description='Web de Sopa CAD, CAD propio para Windows' \
+            -f homepage='https://ardu01.github.io/SopaCad-web/' || true
