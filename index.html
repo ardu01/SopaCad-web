@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sopa CAD · CAD paramétrico para Windows</title>
+<meta name="description" content="Sopa CAD 0.42 es un CAD paramétrico propio para Windows, nativo y libre (MIT). Croquis con restricciones, sólidos con historial y planos con cotas.">
+<meta name="theme-color" content="#f4f6f8">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Sopa CAD · CAD paramétrico para Windows">
+<meta property="og:description" content="CAD paramétrico propio para Windows, nativo y libre (MIT). Croquis con restricciones, sólidos con historial y planos con cotas.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="estilos.css">
+<script>
+try {
+  var t = localStorage.getItem("tema");
+  if (t === "oscuro" || (!t && matchMedia("(prefers-color-scheme: dark)").matches)) {
+    document.documentElement.setAttribute("data-tema", "oscuro");
+    var m = document.querySelector('meta[name="theme-color"]');
+    if (m) m.setAttribute("content", "#10141a");
+  }
+} catch (e) {}
+</script>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header class="nav">
+  <a class="logo" href="index.html"><svg class="marca" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#1d5f99"/><path d="M7 13 L12 9 L25 9 L25 20 L20 24 L7 24 Z" fill="#d5e7f6"/><circle cx="16" cy="16.5" r="3.1" fill="#1d5f99"/></svg>SOPA<b>CAD</b></a>
+  <nav class="secciones" aria-label="Secciones">
+    <a href="#que-es">Qué es</a>
+    <a href="#funciones">Funciones</a>
+    <a href="#galeria">Galería</a>
+    <a href="#evolucion">Evolución</a>
+    <a href="#formatos">Formatos</a>
+    <a href="#probar">Probarlo</a>
+    <a href="#licencia">Licencia</a>
+  </nav>
+  <span class="pill">0.42</span>
+  <button type="button" class="tema" id="tema" aria-pressed="false">Tema oscuro</button>
+</header>
+
+<main id="contenido">
+  <section class="hero" id="inicio">
+    <div>
+      <p class="kicker">// Versión 0.42 · Windows · MIT</p>
+      <h1>Un CAD propio,<br><span>paramétrico.</span></h1>
+      <p class="lead">Sopa CAD es un CAD paramétrico propio para Windows, nativo y libre (MIT). Dibuja croquis con restricciones y conviértelos en sólidos con historial, ecuaciones y planos acotados.</p>
+      <div class="ctas">
+        <a class="btn" href="#funciones">Ver las funciones</a>
+        <a class="btn ghost" href="#probar">Cómo probarlo</a>
+      </div>
+      <p class="nota">El programa está en un repositorio privado. Esta página no lo descarga. Antes se llamó CAD Libre.</p>
+    </div>
+    <figure class="visor-cad">
+      <div class="visor-barra"><span>Sopa CAD 0.42</span><span>pieza mecanizada</span></div>
+      <img src="img/live-pieza-mecanizada.webp" srcset="img/live-pieza-mecanizada-960.webp 960w, img/live-pieza-mecanizada.webp 2000w" sizes="(max-width: 899px) 100vw, 540px" width="2000" height="809" alt="Captura de Sopa CAD 0.42: la pieza mecanizada en azul, con la cinta arriba y el árbol de operaciones a la izquierda. Se ven dos taladros, una ranura en C y un rombo.">
+      <figcaption>Captura de la 0.42 en el equipo de Miguel. La foto no trae cotas de esta pieza.</figcaption>
+    </figure>
+  </section>
+
+  <section class="bloque" id="que-es">
+    <p class="kicker">01 · Qué es</p>
+    <h2>Del croquis al plano, en Windows</h2>
+    <p class="lead">La interfaz es nativa (WPF), escrita en C#. El sólido de contorno (<span class="nowrap">B-rep</span>) lo resuelve FreeCAD 1.1.4 en versión portable, con Open CASCADE. Esos dos no van dentro del ZIP de Sopa CAD.</p>
+    <ol class="flujo">
+      <li><b>01 Croquis</b><span>Geometría con restricciones.</span></li>
+      <li><b>02 Sólido</b><span>Extrusión, revolución, barrido, recubrimiento, vaciado y combinar.</span></li>
+      <li><b>03 Historial</b><span>Operaciones, matrices, simetría, ecuaciones y parámetros.</span></li>
+      <li><b>04 Plano</b><span>Cotas, y salida a SVG, DXF y PNG.</span></li>
+    </ol>
+    <div class="cols3">
+      <article class="card">
+        <h3>Croquis que aguantan un cambio</h3>
+        <p>El croquis lleva restricciones. Si mueves una cota o un parámetro, la geometría se reconstruye desde el historial, no a mano.</p>
+      </article>
+      <article class="card">
+        <h3>Sólidos con operaciones</h3>
+        <p>Extrusión, revolución, barrido, recubrimiento y vaciado. Combinar sólidos, repetirlos en matriz y reflejarlos por simetría.</p>
+      </article>
+      <article class="card">
+        <h3>Plano con cotas</h3>
+        <p>Del sólido sale un plano acotado. Se guarda en <code>.cldrawing</code> y puede exportarse a SVG, DXF o PNG.</p>
+      </article>
+    </div>
+    <p class="nota">La cinta agrupa croquis y operaciones en una barra superior, con una disposición parecida a la de otros CAD de escritorio. Los iconos son propios. Sopa CAD no es SolidWorks y esta página no promete la misma cobertura.</p>
+  </section>
+
+  <section class="bloque" id="funciones">
+    <p class="kicker">02 · Funciones</p>
+    <h2>Lo que hace la 0.42</h2>
+    <p>Lista de la versión actual. Lo que depende de FreeCAD queda dicho al lado, para no contarlo como si viniera en el ZIP.</p>
+    <ul class="specs">
+      <li><b>Croquis</b><span>Croquis con restricciones, sobre cuadrícula, con ejes y un panel para fijar la geometría.</span></li>
+      <li><b>Sólidos</b><span>Extrusión, revolución, barrido, recubrimiento y vaciado.</span></li>
+      <li><b>Combinar</b><span>Combinar sólidos. Matrices y simetría para repetir o reflejar operaciones.</span></li>
+      <li><b>Historial</b><span>Árbol de operaciones. Cambiar un paso anterior reconstruye lo que depende de él.</span></li>
+      <li><b>Parámetros</b><span>Ecuaciones y parámetros para conducir cotas desde un valor, no desde el dibujo suelto.</span></li>
+      <li><b>Planos</b><span>Planos con cotas. En la lámina del bloque se leen planta, alzado, perfil derecho e isométrica, en tercer diedro.</span></li>
+      <li><b>Archivos</b><span>Pieza en <code>.clcad</code>. Plano en <code>.cldrawing</code>.</span></li>
+      <li><b>Salida 2D</b><span>Exportar SVG, DXF y PNG.</span></li>
+      <li><b>Salida 3D</b><span>Exportar STEP, STL y OBJ. Pasa por el B-rep de FreeCAD 1.1.4 portable y Open CASCADE, que no están en el ZIP.</span></li>
+    </ul>
+    <p class="nota">En la vista previa de cuando la ventana se llamaba CAD Libre, la cinta enseña además corte de extrusión, corte de revolución, corte barrido, nervio, envolver, redondeo, chaflán, ángulo de salida y geometría de referencia. El chaflán se ve también en la 0.42, en el documento «bloque achaflanado». Esta página no marca como comprobado cada botón de esa cinta.</p>
+  </section>
+
+  <section class="bloque ancho" id="galeria">
+    <p class="kicker">03 · Galería</p>
+    <h2>Capturas de la 0.42</h2>
+    <p class="lead">Fotos de Sopa CAD 0.42 en el equipo de Miguel. El plano es la lámina exportada. Las cotas que se leen están en esa hoja; el resto de capturas no trae medidas, y esta página no las añade.</p>
+    <figure class="lamina">
+      <img src="img/plano-bloque-taladrado.webp" srcset="img/plano-bloque-taladrado-900.webp 900w, img/plano-bloque-taladrado.webp 1485w" sizes="(max-width: 899px) 100vw, 1080px" width="1485" height="1050" alt="Plano exportado por Sopa CAD del bloque 80x50x20 con taladro D16: planta, alzado, perfil derecho e isométrica. El cajetín dice CAD LIBRE, milímetros, tercer diedro, escala 0,699:1, revisión A, A4." loading="lazy">
+      <figcaption>Lámina exportada. En el cajetín: «Bloque 80x50x20 · taladro D16», «CAD LIBRE · mm · Tercer diedro», «Escala 0,699:1 · Rev. A · A4». Abajo: curvas discretizadas a 0,02 mm.</figcaption>
+    </figure>
+    <div class="galeria">
+      <figure class="ficha-captura">
+        <div class="signo"><img src="img/ribbon-empty.webp" srcset="img/ribbon-empty-960.webp 960w, img/ribbon-empty.webp 2000w" sizes="(max-width: 899px) 100vw, 50vw" width="2000" height="809" alt="Editor de croquis de Sopa CAD 0.42: cuadrícula, eje rojo y eje verde, un rectángulo azul y el panel de restricciones." loading="lazy"></div>
+        <h3>Croquis</h3>
+        <p>El editor, con la cuadrícula, los ejes y un rectángulo. A la izquierda, el panel de restricciones.</p>
+        <figcaption>Captura de la 0.42. El archivo de la foto se llama ribbon-empty.</figcaption>
+      </figure>
+      <figure class="ficha-captura">
+        <div class="signo"><img src="img/live-brida-parametrica.webp" srcset="img/live-brida-parametrica-960.webp 960w, img/live-brida-parametrica.webp 2000w" sizes="(max-width: 899px) 100vw, 50vw" width="2000" height="809" alt="Dos ventanas de Sopa CAD 0.42 con la misma brida azul: agujero central y cuatro taladros." loading="lazy"></div>
+        <h3>Brida paramétrica</h3>
+        <p>Dos ventanas del mismo disco, en azul: agujero central y cuatro taladros. El árbol nombra la brida.</p>
+        <figcaption>Captura de la 0.42. Sin cotas en la foto.</figcaption>
+      </figure>
+      <figure class="ficha-captura">
+        <div class="signo"><img src="img/04-bloque-achaflanado.webp" srcset="img/04-bloque-achaflanado-960.webp 960w, img/04-bloque-achaflanado.webp 2000w" sizes="(max-width: 899px) 100vw, 50vw" width="2000" height="809" alt="Ventana bloque achaflanado de Sopa CAD 0.42: un prisma gris con una arista cortada y el panel de aristas a la izquierda." loading="lazy"></div>
+        <h3>Bloque achaflanado</h3>
+        <p>La ventana «bloque achaflanado»: un prisma con una arista cortada. El panel lista aristas.</p>
+        <figcaption>Captura de la 0.42. La distancia no se cita aquí: se lee en el panel de la foto.</figcaption>
+      </figure>
+      <figure class="ficha-captura">
+        <div class="signo"><img src="img/live-croquis-restringido.webp" srcset="img/live-croquis-restringido-960.webp 960w, img/live-croquis-restringido.webp 2000w" sizes="(max-width: 899px) 100vw, 50vw" width="2000" height="809" alt="Documento croquis restringido en Sopa CAD 0.42: un prisma azul ya sólido, con la cinta y el árbol de operaciones." loading="lazy"></div>
+        <h3>Croquis restringido, ya en sólido</h3>
+        <p>La ventana «croquis restringido» muestra el prisma resultante, con la cinta y el árbol.</p>
+        <figcaption>Captura de la 0.42. No es el editor de croquis: es el sólido de ese documento.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="bloque" id="evolucion">
+    <p class="kicker">04 · Evolución</p>
+    <h2>De la 0.2 a la 0.42</h2>
+    <p>El programa ha pasado de la versión 0.2 a la 0.42. No hay aquí un diario con la fecha de cada salto: solo lo que se reconoce en las imágenes, de cuando la ventana se llamaba CAD Libre a la 0.42 con el nombre Sopa CAD.</p>
+    <ol class="linea-tiempo">
+      <li class="etapa">
+        <div class="etapa-cab"><strong>CAD Libre</strong><span class="chip">Nombre anterior</span></div>
+        <h3>La ventana todavía no se llamaba Sopa CAD</h3>
+        <p>La vista previa muestra una brida en gris, la biblioteca de diseño a la derecha (placa mecanizada y brida) y la cinta en español. El árbol incluye ecuaciones, material sin especificar, las vistas alzado, planta y lateral, el origen, y las operaciones de la brida. Esta página no asigna esa captura a un número de versión concreto.</p>
+        <figure class="foto-etapa">
+          <img src="img/vista-previa.webp" srcset="img/vista-previa-960.webp 960w, img/vista-previa.webp 1904w" sizes="(max-width: 899px) 100vw, 640px" width="1904" height="1024" alt="Vista previa de CAD Libre: brida gris, cinta de modelado, árbol de operaciones y biblioteca de diseño." loading="lazy">
+          <figcaption>Vista previa anterior. La barra de título dice CAD LIBRE, no Sopa CAD.</figcaption>
+        </figure>
+      </li>
+      <li class="etapa">
+        <div class="etapa-cab"><strong>El plano</strong><span class="chip">Cajetín antiguo</span></div>
+        <h3>La lámina sigue firmando CAD LIBRE</h3>
+        <p>El plano del bloque 80×50×20 con taladro D16 lleva en el cajetín «CAD LIBRE · mm · Tercer diedro», escala 0,699:1, revisión A, formato A4. Las vistas son planta, alzado, perfil derecho e isométrica. Abajo avisa: cotas generales de proyección, curvas discretizadas a 0,02 mm.</p>
+      </li>
+      <li class="etapa actual">
+        <div class="etapa-cab"><strong>0.42</strong><span class="chip">Versión actual</span></div>
+        <h3>Sopa CAD, en el equipo de Miguel</h3>
+        <p>La ventana ya se llama Sopa CAD. En esa versión se ven el árbol, el croquis sobre la cuadrícula, sólidos en azul (la pieza mecanizada, la brida y el prisma del croquis restringido) y el bloque con chaflán. El repositorio del programa sigue siendo privado.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bloque" id="formatos">
+    <p class="kicker">05 · Formatos</p>
+    <h2>Qué archivo es cada cosa</h2>
+    <ul class="tabla">
+      <li><b>Pieza</b><code>.clcad</code><span>Archivo de la pieza en Sopa CAD.</span></li>
+      <li><b>Plano</b><code>.cldrawing</code><span>Archivo del plano, con sus vistas y cotas.</span></li>
+      <li><b>Vector</b><code>SVG</code> <code>DXF</code><span>Exportación del plano o del dibujo.</span></li>
+      <li><b>Imagen</b><code>PNG</code><span>Exportación a imagen.</span></li>
+      <li><b>Sólido</b><code>STEP</code><span>Intercambio del sólido. Hace falta FreeCAD 1.1.4 portable y Open CASCADE, fuera del ZIP.</span></li>
+      <li><b>Malla</b><code>STL</code> <code>OBJ</code><span>La misma vía: el B-rep no va incluido en el ZIP de Sopa CAD.</span></li>
+    </ul>
+    <p class="nota">En el plano del bloque, la propia lámina avisa de que las curvas de la proyección van discretizadas a 0,02 mm. Es un límite de esa salida, no un redondeo de esta página.</p>
+  </section>
+
+  <section class="bloque" id="probar">
+    <p class="kicker">06 · Cómo probarlo</p>
+    <h2>El ZIP no está en esta web</h2>
+    <p class="lead">Sopa CAD 0.42 se prueba desde el repositorio privado del programa. Aquí no hay instalador, ni tamaño de archivo, ni suma de comprobación, porque el ZIP no se publica en esta página.</p>
+    <ol class="pasos">
+      <li>
+        <div>
+          <h3>Acceso al repositorio</h3>
+          <p>El código y el ZIP están en <a href="https://github.com/ardu01/sopa-cad">github.com/ardu01/sopa-cad</a>. Es privado. Sin acceso, GitHub responde que no existe. No hay otra descarga.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Windows</h3>
+          <p>Es una aplicación de Windows, nativa, con interfaz WPF escrita en C#. Esta página no describe una versión para otros sistemas porque no la hay.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>FreeCAD, aparte</h3>
+          <p>Para el sólido B-rep y para exportar STEP, STL y OBJ hace falta FreeCAD 1.1.4 en versión portable. Open CASCADE va con FreeCAD. Ninguno de los dos está dentro del ZIP.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bloque" id="licencia">
+    <p class="kicker">07 · Licencia</p>
+    <h2>MIT, con el núcleo aparte</h2>
+    <p>Sopa CAD es software libre con licencia MIT. Puedes usarlo, estudiarlo, modificarlo y compartirlo en los términos de esa licencia. El copyright del programa es de Miguel Rodríguez Saiz.</p>
+    <dl class="ficha">
+      <div><dt>Programa</dt><dd>MIT <small>Sopa CAD 0.42 · Miguel Rodríguez Saiz</small></dd></div>
+      <div><dt>Esta web</dt><dd>MIT <small>Texto. Las capturas son de la aplicación. Ver LICENSE.</small></dd></div>
+      <div><dt>FreeCAD 1.1.4</dt><dd>LGPL-2.1-or-later <small>No va en el ZIP. <a href="https://www.freecad.org/">freecad.org</a></small></dd></div>
+      <div><dt>Open CASCADE</dt><dd>LGPL-2.1 con excepción <small>Lo usa FreeCAD. <a href="https://dev.opencascade.org/resources/licensing">Licencia de OCCT</a></small></dd></div>
+      <div><dt>Sistema</dt><dd>Windows <small>Interfaz nativa WPF, C#</small></dd></div>
+      <div><dt>Nombre anterior</dt><dd>CAD Libre <small>El cajetín del plano aún lo usa</small></dd></div>
+    </dl>
+    <p class="nota">Sopa CAD no es FreeCAD. FreeCAD y Open CASCADE Technology son programas distintos, con su propia licencia. La cinta no usa iconos de SolidWorks ni de otro CAD propietario.</p>
+  </section>
+</main>
+
+<footer class="pie">
+  <p><b>Sopa CAD</b> · un programa de Miguel Rodríguez Saiz</p>
+  <p>Programa con licencia MIT. Repositorio privado: <a href="https://github.com/ardu01/sopa-cad">github.com/ardu01/sopa-cad</a></p>
+  <p class="mini">El B-rep usa FreeCAD 1.1.4 portable (LGPL-2.1-or-later) y Open CASCADE Technology (LGPL-2.1 con la excepción de OCCT). No forman parte del ZIP. Capturas de la 0.42 y vista previa de CAD Libre: Miguel Rodríguez Saiz.</p>
+  <p class="mini">Esta web no usa cookies ni rastreadores.</p>
+</footer>
+<script src="sitio.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página no encontrada · Sopa CAD</title>
+<meta name="description" content="Esta dirección no existe en la web de Sopa CAD.">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#f4f6f8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="estilos.css">
+<script>
+try {
+  var t = localStorage.getItem("tema");
+  if (t === "oscuro" || (!t && matchMedia("(prefers-color-scheme: dark)").matches)) {
+    document.documentElement.setAttribute("data-tema", "oscuro");
+  }
+} catch (e) {}
+</script>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header class="nav">
+  <a class="logo" href="index.html"><svg class="marca" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#1d5f99"/><path d="M7 13 L12 9 L25 9 L25 20 L20 24 L7 24 Z" fill="#d5e7f6"/><circle cx="16" cy="16.5" r="3.1" fill="#1d5f99"/></svg>SOPA<b>CAD</b></a>
+  <nav class="secciones" aria-label="Secciones">
+    <a href="index.html#que-es">Qué es</a>
+    <a href="index.html#funciones">Funciones</a>
+    <a href="index.html#galeria">Galería</a>
+    <a href="index.html#probar">Probarlo</a>
+  </nav>
+  <span class="pill">0.42</span>
+  <button type="button" class="tema" id="tema" aria-pressed="false">Tema oscuro</button>
+</header>
+<main id="contenido" class="bloque error">
+  <p class="kicker">Error 404</p>
+  <h1>Esta página no está.</h1>
+  <p class="lead">La dirección no existe en la web de Sopa CAD. El programa tampoco se descarga desde aquí: el ZIP está en el repositorio privado.</p>
+  <div class="ctas">
+    <a class="btn" href="index.html">Ir a la portada</a>
+    <a class="btn ghost" href="index.html#probar">Cómo probarlo</a>
+  </div>
+</main>
+<footer class="pie">
+  <p><b>Sopa CAD</b> · un programa de Miguel Rodríguez Saiz</p>
+  <p class="mini">Esta web no usa cookies ni rastreadores.</p>
+</footer>
+<script src="sitio.js" defer></script>
+</body>
+</html>
