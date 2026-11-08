@@ -1,38 +1,170 @@
-# Sopa CAD · web
+# SopaCAD | Official Website
 
-Web estática de **Sopa CAD 0.42**, un CAD paramétrico propio para Windows: interfaz nativa (WPF, C#), licencia MIT. Antes se llamó CAD Libre.
+**Sitio web oficial de SopaCAD, un software de diseño CAD paramétrico para Windows desarrollado por Ardu Solutions.**
 
-El programa vive en el repositorio privado [github.com/ardu01/sopa-cad](https://github.com/ardu01/sopa-cad). Esta web no distribuye el ZIP, no publica su tamaño ni una suma de comprobación, y no enlaza archivos de ese repositorio.
+[![Website](https://img.shields.io/badge/Website-Online-16A34A?style=flat-square)](https://ardu01.github.io/SopaCad-web/)
+![HTML5](https://img.shields.io/badge/HTML5-Web-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-Design-1572B6?style=flat-square&logo=css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![GitHub Pages](https://img.shields.io/badge/Hosting-GitHub_Pages-222222?style=flat-square&logo=github)
+![License](https://img.shields.io/badge/License-MIT-2563EB?style=flat-square)
 
-HTML, CSS y JS sin build, sin cookies y sin rastreadores. Pensada para GitHub Pages desde la raíz de `main` (hay un `.nojekyll`).
+---
 
-## Verla en local
+## Descripción
 
-```bash
+**SopaCAD Web** es la página oficial de presentación de **SopaCAD**, una aplicación de diseño asistido por ordenador (CAD) paramétrico desarrollada por **Miguel Rodríguez Saiz** bajo Ardu Solutions.
+
+Su objetivo es proporcionar un espacio público donde conocer las capacidades del software, explorar sus funcionalidades, consultar capturas reales y seguir su evolución.
+
+SopaCAD es una aplicación nativa para Windows desarrollada mediante **C# y WPF**, orientada al modelado de piezas mecánicas mediante croquis, restricciones geométricas, operaciones tridimensionales e historial paramétrico.
+
+Anteriormente, el proyecto se denominaba **CAD Libre**.
+
+Esta web forma parte del ecosistema tecnológico de **Ardu Solutions**.
+
+**Desarrollador:** Miguel Rodríguez Saiz  
+**Organización:** Ardu Solutions  
+**Categoría:** Desarrollo Web / Ingeniería / Diseño CAD  
+**Versión del producto presentada:** 0.42  
+**Publicación:** GitHub Pages
+
+## Acceder a la web
+
+**[Visitar la web oficial de SopaCAD](https://ardu01.github.io/SopaCad-web/)**
+
+## Características
+
+- Presentación oficial de SopaCAD.
+- Información sobre las funcionalidades de diseño paramétrico.
+- Capturas reales de la aplicación.
+- Galería de piezas y operaciones CAD.
+- Información sobre croquis y modelado tridimensional.
+- Presentación de formatos de importación y exportación.
+- Historial de evolución del proyecto.
+- Información sobre tecnologías y componentes.
+- Interfaz con modos claro y oscuro.
+- Diseño adaptable a diferentes dispositivos.
+- Sitio estático sin cookies ni rastreadores.
+- Publicación mediante GitHub Pages.
+
+## Tecnologías
+
+| Tecnología | Función |
+|---|---|
+| HTML5 | Estructura y contenido |
+| CSS3 | Diseño visual y presentación |
+| JavaScript | Interactividad y gestión del tema |
+| WebP | Optimización de imágenes |
+| GitHub Pages | Alojamiento y publicación |
+| Git | Control de versiones |
+
+La web no requiere un framework ni un proceso de compilación.
+
+## Estructura del repositorio
+
+```text id="v6nf4b"
+SopaCad-web/
+│
+├── img/
+│   └── Capturas y recursos gráficos
+│
+├── index.html
+├── estilos.css
+├── sitio.js
+├── favicon.svg
+├── 404.html
+├── .nojekyll
+├── LICENSE
+└── README.md
+```
+
+El archivo `index.html` contiene la página principal, mientras que `estilos.css` y `sitio.js` gestionan la presentación visual y la interactividad.
+
+El directorio `img/` incluye capturas reales de SopaCAD, utilizadas para mostrar sus herramientas de diseño y evolución.
+
+## Ejecución local
+
+Clonar el repositorio:
+
+```bash id="vnjb1h"
+git clone https://github.com/ardu01/SopaCad-web.git
+cd SopaCad-web
+```
+
+Iniciar un servidor HTTP local:
+
+```bash id="iw9t75"
 python3 -m http.server 8741
 ```
 
-Abre `http://127.0.0.1:8741/`. Hace falta un servidor para que las rutas relativas y el 404 se comporten como en Pages; abrir el HTML suelto también enseña la portada.
+Acceder desde el navegador a:
 
-## Qué hay
+`http://localhost:8741`
 
-- `index.html` — portada: qué es, funciones de la 0.42, galería, evolución 0.2 → 0.42, formatos, cómo probarlo y licencia.
-- `estilos.css`, `sitio.js` — presentación y el interruptor de tema (claro u oscuro, guardado en `localStorage` de este sitio).
-- `404.html` — página que usa GitHub Pages cuando la ruta no existe.
-- `img/` — capturas en WebP de Sopa CAD 0.42 (y la vista previa anterior, cuando la ventana se llamaba CAD Libre). Cada foto tiene una versión ancha y otra de unos 960 px. No hay redibujos.
+No se requiere instalar dependencias adicionales para visualizar la web.
 
-## Capturas
+## Proyecto principal: SopaCAD
 
-Fotos tomadas en el equipo de Miguel. Van en `img/` y `index.html` las enlaza así:
+Esta web presenta **SopaCAD 0.42**, una aplicación de diseño paramétrico orientada a la creación y modificación de componentes mecánicos.
 
-- Hero: `img/live-pieza-mecanizada.webp`
-- Galería: `img/ribbon-empty.webp` (editor de croquis), `img/live-brida-parametrica.webp`, `img/04-bloque-achaflanado.webp`, `img/live-croquis-restringido.webp` (el prisma ya sólido), `img/plano-bloque-taladrado.webp` (la lámina exportada)
-- Evolución: `img/vista-previa.webp`
+Entre sus funcionalidades documentadas se encuentran:
 
-No se sirven desde el repositorio privado del programa.
+- Creación de croquis con restricciones geométricas.
+- Modelado de sólidos tridimensionales.
+- Extrusiones y revoluciones.
+- Operaciones de barrido y recubrimiento.
+- Vaciado y combinación de sólidos.
+- Matrices y simetrías.
+- Historial de operaciones.
+- Parámetros y ecuaciones.
+- Generación de planos con cotas.
+- Exportación a formatos de diseño e intercambio.
 
-## Créditos
+### Arquitectura del producto
 
-Sopa CAD y esta web: Miguel Rodríguez Saiz. El programa es MIT. El texto de esta web también, ver [LICENSE](LICENSE). Las capturas son de la aplicación.
+SopaCAD utiliza una interfaz nativa desarrollada en **C# y WPF**.
 
-El sólido B-rep y la exportación STEP, STL y OBJ usan FreeCAD 1.1.4 portable (LGPL-2.1-or-later) y Open CASCADE Technology (LGPL-2.1 con la excepción de OCCT). No van en el ZIP. Sopa CAD no es FreeCAD ni SolidWorks; la cinta no usa iconos propietarios.
+Para determinadas operaciones de geometría sólida B-rep y exportación, se apoya en **FreeCAD 1.1.4 portable** y **Open CASCADE Technology**.
+
+Estos componentes externos no están incluidos en el paquete ZIP del programa descrito por la web.
+
+SopaCAD es un proyecto independiente y no debe confundirse con FreeCAD, SolidWorks u otros productos CAD comerciales.
+
+### Disponibilidad
+
+El código principal de SopaCAD se mantiene en un repositorio privado.
+
+Esta web es exclusivamente informativa y no distribuye el paquete del programa ni sus archivos internos.
+
+## Autor
+
+**Miguel Rodríguez Saiz**
+
+Diseño y desarrollo del proyecto.
+
+**Ardu Solutions** — Desarrollo de software, ingeniería, inteligencia artificial y soluciones tecnológicas.
+
+- **Web oficial:** https://ardu01.github.io/SopaCad-web/
+- **Portfolio:** https://ardu01.github.io/proyectos/
+- **Ardu Solutions:** https://ardusolutions.pages.dev/
+- **GitHub:** https://github.com/ardu01
+- **Repositorio:** https://github.com/ardu01/SopaCad-web
+
+## Licencia
+
+El código y la documentación de esta web se distribuyen bajo **MIT License**.
+
+Esta licencia permite utilizar, modificar y redistribuir el software, respetando las condiciones y avisos de copyright establecidos.
+
+El producto SopaCAD también se presenta bajo licencia MIT.
+
+Los componentes externos, como FreeCAD y Open CASCADE Technology, mantienen sus respectivas licencias.
+
+Consultar el archivo [LICENSE](LICENSE) para más información.
+
+---
+
+**© 2026 Miguel Rodríguez Saiz · Ardu Solutions**
+
+*SopaCAD — Engineering ideas into reality.*
